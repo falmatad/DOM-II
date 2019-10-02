@@ -40,7 +40,7 @@ header.addEventListener("mouseleave", (event) => {
 // ------------double-click-------
 let changeTopImg = document.querySelector("header img");
     changeTopImg.addEventListener("dblclick", (event) => {
-        changeTopImg.src= "http://funbus.com/wp-content/uploads/2014/09/coach2.1.jpg"
+        changeTopImg.style.display = "none";
     })
 
 // -------------click---------------
@@ -50,10 +50,24 @@ let imgClick = document.querySelectorAll(".container img");
         element.addEventListener("click", () => {
             element.src= "http://funbus.com/wp-content/uploads/2014/09/coach2.1.jpg";
     })
-})
+});
 
 // -------------scroll--------------
 
-let midColor = document.querySelector(".container section");
+let midColor = document.querySelectorAll(".container section");
 
-    midColor
+    midColor.forEach(function(element) {
+        console.log(element);
+        window.addEventListener ("scroll", () => {
+            element.style.background = "cyan";
+        })
+    })
+
+// --------------re-size------------
+let containerImg = document.querySelectorAll(".container img ");
+containerImg.forEach(function(element) {
+    window.addEventListener ("resize", () => {
+        element.src = "https://www.maropost.com/wp-content/uploads/2019/06/The-Welcome-Email_06042019-01-1024x570.jpg";
+    })
+})
+// 
