@@ -19,8 +19,7 @@
 
 window.addEventListener("load", () => {
     let welcomeText = document.createElement("h1");
-    welcomeText.textContent = "Welcome to Fun Bus";
-
+    welcomeText.textContent = "Welcome to";
     document.querySelector("header").prepend(welcomeText);
     window.setTimeout(function(){welcomeText.style.display = "none"}, 2000);
 })
@@ -38,4 +37,23 @@ header.addEventListener("mouseleave", (event) => {
     event.target.style.backgroundColor = "white";
    })
 
-// ----------------
+// ------------double-click-------
+let changeTopImg = document.querySelector("header img");
+    changeTopImg.addEventListener("dblclick", (event) => {
+        changeTopImg.src= "http://funbus.com/wp-content/uploads/2014/09/coach2.1.jpg"
+    })
+
+// -------------click---------------
+let imgClick = document.querySelectorAll(".container img");
+    imgClick.forEach(function (element){
+        console.log(element);
+        element.addEventListener("click", () => {
+            element.src= "http://funbus.com/wp-content/uploads/2014/09/coach2.1.jpg";
+    })
+})
+
+// -------------scroll--------------
+
+let midColor = document.querySelector(".container section");
+
+    midColor
