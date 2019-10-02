@@ -30,12 +30,8 @@ window.addEventListener("load", () => {
 let header = document.querySelector("header");
 
 header.addEventListener("mouseenter", () => {
-    header.style.backgroundColor = "cyan";
+    header.style.backgroundColor = "gray";
 })
-
-header.addEventListener("mouseleave", (event) => {
-    event.target.style.backgroundColor = "white";
-   })
 
 // ------------double-click-------
 let changeTopImg = document.querySelector("header img");
@@ -70,4 +66,50 @@ containerImg.forEach(function(element) {
         element.src = "https://www.maropost.com/wp-content/uploads/2019/06/The-Welcome-Email_06042019-01-1024x570.jpg";
     })
 })
+
+// ------------key-Down---------
+const zoom = document.querySelector(".content-destination");
+zoom.addEventListener("wheel", () => {
+    zoom.style.transform = "scale(1.2)";
+    zoom.style.transition = "all 0.3s"
+
+})
+// -------------drag------------
+
+let draggedImg = document.querySelector(".intro img");
+draggedImg.addEventListener("drag", () => {
+    draggedImg.style.transform = "scale(1.2)";
+    draggedImg.style.transition = "all 0.3s"
+})
+// -----------mouse-over--------
+
+let mouseOverImg = document.querySelectorAll(".content-section img");
+
+mouseOverImg.forEach(function(element) {
+    element.addEventListener ("mouseover", () => {
+        element.style.transform = "scale(1.2)";
+        element.style.transition = "all 0.3s"
+    })
+})
+
 // 
+let homeArea = document.querySelector(".home");
+homeArea.addEventListener("click", () => {
+    homeArea.style.backgroundColor ="purple";
+});
+// -----------------mouse-leave----------------
+let textStuff = document.querySelector(".text-content");
+textStuff.addEventListener("mouseleave", (event) => {
+    textStuff.style.backgroundColor="gray";
+  event.stopPropagation();
+})
+
+
+// --------------stop-default---------------
+let stopLink = document.querySelector(".nav-link");
+
+stopLink.addEventListener("click", (event) => {
+  console.log("stopped link");
+  
+  event.preventDefault();
+})
